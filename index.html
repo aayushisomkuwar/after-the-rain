@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0c1116" />
+    <title>AFTER THE RAIN</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Rainy window generative artwork"></canvas>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-top">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div class="brand-text">
+            <h1>After the Rain</h1>
+            <p class="subtitle">trace the glass &mdash; let the fog lift</p>
+          </div>
+        </div>
+        <div id="status" class="status" data-state="idle">
+          <span class="status-dot"></span>
+          <span class="status-label">Move your finger over the glass</span>
+        </div>
+      </div>
+
+      <div class="overlay-bottom">
+        <div class="controls" role="toolbar" aria-label="Artwork controls">
+          <button id="btn-camera" type="button" class="ctrl ctrl-camera" aria-pressed="false">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="ctrl-label">Enable Camera</span>
+          </button>
+          <button id="btn-photo" type="button" class="ctrl">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h2l1.2-2h7.6L17 8h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="ctrl-label">Take Photo</span>
+          </button>
+          <button id="btn-reset" type="button" class="ctrl">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="ctrl-label">Reset</span>
+          </button>
+          <button id="btn-fx" type="button" class="ctrl ctrl-fx" aria-pressed="false" title="Toggle reduced effects">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m14.5-6.5L15 8m-6 8-2.5 2.5m11 0L15 16M9 8 6.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="ctrl-label">Lite FX</span>
+          </button>
+        </div>
+        <p class="hint">Drag with your finger or mouse to clear the fog. Enable the camera to use your fingertip.</p>
+      </div>
+    </div>
+
+    <video id="cam" playsinline muted></video>
+    <a id="download" href="#" style="display:none"></a>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
